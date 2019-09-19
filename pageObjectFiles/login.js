@@ -8,8 +8,8 @@ module.exports = {
 
     loginCorrect() {
         browser.url('/login');
-        $(this.variableLocatorsLogin.elementEmailInput).setValue('roman.qa+test10@dott.pro');
-        $(this.variableLocatorsLogin.elementEmailPassword).setValue('Qwer!@#');
+        $(this.variableLocatorsLogin.elementEmailInput).setValue('');
+        $(this.variableLocatorsLogin.elementEmailPassword).setValue('');
         $(this.variableLocatorsLogin.pressEnter).click();
     }
 };
