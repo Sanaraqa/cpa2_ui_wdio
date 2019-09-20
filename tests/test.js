@@ -53,9 +53,6 @@ describe("", function() {
     $(checkYouTrafficOrStreamInput).click();
     $(checkTraffic).click();
 
-    /* $(chooseLendingMenu).waitForDisplayed(10000);
-    expect($(chooseLendingMenu).isDisplayed()).to.equal(true, true);*/
-
     $(checkedRadioButtonLending).waitForDisplayed(15000);
 
     expect($(checkedRadioButtonLending).isDisplayed()).to.equal(true, true);
@@ -66,7 +63,8 @@ describe("", function() {
 
     expect($(createWindow).isDisplayed()).to.equal(true, true);
     $(buttonOkCreateStream).click();
+
+    expect(browser.getUrl()).not.to.contains("/stream-create");
+    expect(browser.getUrl()).to.contains("/streams");
   });
-
-
 });
