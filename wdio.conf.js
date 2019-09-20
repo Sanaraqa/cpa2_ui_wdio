@@ -3,16 +3,11 @@ exports.config = {
     specs: ['./tests/*.js'],
     exclude: [
     ],
-
     maxInstances: 10,
-
     capabilities: [{
         maxInstances: 5,
-
         browserName: 'firefox',
-
     }],
-
     logLevel: 'info',
     bail: 0,
     baseUrl: 'https://nutra.media',
@@ -32,5 +27,4 @@ exports.config = {
             browser.takeScreenshot();
         }
     },
-
 };
