@@ -10,7 +10,7 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    baseUrl: '',
+    baseUrl: 'https://nutra.media',
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
