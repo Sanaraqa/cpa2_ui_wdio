@@ -1,9 +1,11 @@
 const { expect } = require("chai");
 const faker = require("faker");
 //const {describe, it} = require("mocha");
-const loginPage = require("../pageObjectFiles/login.js");
+const loginPage = require("../pageObjectFiles/loginPO.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const streamPage = require("../pageObjectFiles/streamPage.js");
+const toolsPage = require("../pageObjectFiles/toolsPage.js");
+const supportPage = require("../pageObjectFiles/supportPage.js");
 
 //run tests .\node_modules\.bin\wdio wdio.conf.js
 
@@ -12,8 +14,10 @@ describe("create main functionality", function () {
   it("should be create stream", function()  {
     loginPage.loginCorrect();
 
+    $(dashBoardPage.variableLocatorsDashBoard.elementHeader).waitForDisplayed(10000);
     expect($(dashBoardPage.variableLocatorsDashBoard.elementHeader).isDisplayed()).to.equal(true, true, "not visible");
-    expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(false, true, "not visible leftMenuAllElements");
+    $(dashBoardPage.variableLocatorsDashBoard.elementHeader).waitForDisplayed(10000);
+    expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true, "not visible leftMenuAllElements");
     $(streamPage.variableLocatorsStreamMenu.buttonStreams).click();
 
     $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(10000);
@@ -46,5 +50,11 @@ describe("create main functionality", function () {
     expect(browser.getUrl()).not.to.contains("/stream-create");
     expect(browser.getUrl()).to.contains("/streams");
   });
-
 });
+
+
+
+
+
+
+

@@ -1,36 +1,50 @@
 const { expect } = require("chai");
 const faker = require("faker");
-const {describe, it} = require("mocha");
-const loginPage = require("../pageObjectFiles/login.js");
+const loginPage = require("../pageObjectFiles/loginPO.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const streamPage = require("../pageObjectFiles/streamPage.js");
 const toolsPage = require("../pageObjectFiles/toolsPage.js");
 
+describe("create domain", function () {
+    it("should be test on create domain", function() {
+      loginPage.loginCorrect();
+
+      $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(15000);
+      expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+
+      $(dashBoardPage.variableLocatorsDashBoard.buttonTools).waitForDisplayed(10000);
+      expect($(dashBoardPage.variableLocatorsDashBoard.buttonTools).isDisplayed()).to.equal(true, true);
+      $(dashBoardPage.variableLocatorsDashBoard.buttonTools).click();
+      expect($(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).isDisplayed()).to.equal(true, true);
+      $(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).click();
 
 
-describe('create parking domain',  function() {
+      $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).waitForDisplayed(10000);
+      expect( $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).isDisplayed()).to.equal(true, true);
+      $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).click();
+      browser.pause(1000);
+      $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).waitForDisplayed(10000);
+      expect( $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).isDisplayed()).to.equal(true, true);
+      $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).click();
 
-    it("should be parking domain", function() {
+      $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).waitForDisplayed(10000);
 
+      $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).setValue(faker.internet.domainName());
 
-        loginPage.loginCorrect();
+      browser.pause(1000);
+      $(toolsPage.variableLocatorsToolsDomainParking.buttonAddDomain).waitForDisplayed(2000);
+      expect( $(toolsPage.variableLocatorsToolsDomainParking.buttonAddDomain).isDisplayed()).to.equal(true, true);
+      $(toolsPage.variableLocatorsToolsDomainParking.buttonAddDomain).click();
 
-        $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(15000);
-        expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+      $(streamPage.variableLocatorsStreamMenu.createWindow).waitForDisplayed(10000);
 
-        $(dashBoardPage.variableLocatorsDashBoard.buttonTools).waitForDisplayed(10000);
-        expect($(dashBoardPage.variableLocatorsDashBoard.buttonTools).isDisplayed()).to.equal(true, true);
-        $(dashBoardPage.variableLocatorsDashBoard.buttonTools).click();
-        expect($(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).isDisplayed()).to.equal(true, true);
-        $(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).click();
+      expect( $(streamPage.variableLocatorsStreamMenu.createWindow).isDisplayed()).to.equal(true, true);
 
-        expect($().isDisplayed()).to.equal(true, true);
-        $().click();
-        $(streamPage.variableLocatorsStreamMenu.checkOffer).click();
+      $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).waitForDisplayed(10000);
 
-        browser.pause(10000);
-        $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).waitForDisplayed(10000);
-        $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).setValue(faker.internet.domainName());
+      $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).click();
 
     });
-});
+  });
+
+

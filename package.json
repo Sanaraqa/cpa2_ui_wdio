@@ -1,14 +1,14 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "try to write tests on wdio",
   "main": "index.js",
   "scripts": {
     "init": "wdio --init",
     "test": "wdio ./wdio.conf.js",
     "ci-test": "wdio ./wdio.conf.ci.js"
   },
-  "author": "",
+  "author": "qa",
   "license": "ISC",
   "dependencies": {
     "chai": "4.2.0",
