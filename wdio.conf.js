@@ -11,7 +11,7 @@ exports.config = {
 
     logLevel: 'info',
     bail: 0,
-    baseUrl: 'https://dev.nutra.media',
+    baseUrl: 'https://nutra.media',
     specFileRetries: 1,
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,

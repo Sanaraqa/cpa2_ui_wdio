@@ -10,7 +10,7 @@ before(function () {
 });
 
 describe('empty ticket theme', function () {
-    it('', function () {
+    it('empty ticket theme', function () {
         $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(10000);
         expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true, "not visible leftMenuAllElements");
         $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).waitForDisplayed(10000);
