@@ -35,7 +35,7 @@ describe("create domain", function () {
 
       console.log(formatsetinEveible);
       
-      if (formatsetinEveible[1] === "Формицитин - средство для потенции") {
+      if (formatsetinEveible[1] === "the same text") {
 
         $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).waitForDisplayed(10000);
         expect( $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).isDisplayed()).to.equal(true, true);
