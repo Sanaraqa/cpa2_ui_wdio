@@ -8,8 +8,9 @@ module.exports = {
     pressEnter: "button[type=submit]"
   },
 
-  //function hoes Сorrect login in system
+  //function hoes сorrect login in system
   loginCorrect() {
+    console.log('START TEST - ///create support task///');
     browser.url("/login");
     $(this.variableLocatorsLogin.elementEmailInput).setValue("roman.qa+test10@dott.pro");
     $(this.variableLocatorsLogin.elementEmailPassword).setValue("Qwer!@#");

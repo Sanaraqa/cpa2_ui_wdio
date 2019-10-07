@@ -8,9 +8,10 @@ exports.config = {
         maxInstances: 1,
         browserName: 'firefox',
     }],
-    logLevel: 'warn',
+
+    logLevel: 'info',
     bail: 0,
-    baseUrl: 'https://nutra.media',
+    baseUrl: 'https://dev.nutra.media',
     specFileRetries: 1,
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,

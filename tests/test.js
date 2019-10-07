@@ -9,10 +9,14 @@ const supportPage = require("../pageObjectFiles/supportPage.js");
 
 //run tests .\node_modules\.bin\wdio wdio.conf.js
 
+before(function () {
+  loginPage.loginCorrect();
+});
+
+
 describe("create main functionality", function () {
 
   it("should be create stream", function()  {
-    loginPage.loginCorrect();
 
     $(dashBoardPage.variableLocatorsDashBoard.elementHeader).waitForDisplayed(10000);
     expect($(dashBoardPage.variableLocatorsDashBoard.elementHeader).isDisplayed()).to.equal(true, true, "not visible");
