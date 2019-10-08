@@ -5,7 +5,7 @@ exports.config = {
     ],
     maxInstances: 10,
     capabilities: [{
-        maxInstances: 1,
+        maxInstances: 3,
         browserName: 'firefox',
     }],
 

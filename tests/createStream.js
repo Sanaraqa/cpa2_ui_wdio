@@ -17,19 +17,15 @@ before(function () {
 describe("create main functionality", function () {
 
   it("should be create stream", function()  {
-
-    $(dashBoardPage.variableLocatorsDashBoard.elementHeader).waitForDisplayed(10000);
-    expect($(dashBoardPage.variableLocatorsDashBoard.elementHeader).isDisplayed()).to.equal(true, true, "not visible");
-    $(dashBoardPage.variableLocatorsDashBoard.elementHeader).waitForDisplayed(10000);
-    expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true, "not visible leftMenuAllElements");
+    $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
+    expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
     $(streamPage.variableLocatorsStreamMenu.buttonStreams).click();
-
-    $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(10000);
+    $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(5000);
 
     expect($(streamPage.variableLocatorsStreamMenu.buttonCreateStream).isDisplayed()).to.equal(true, true);
     $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).click();
 
-    $(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).waitForDisplayed(10000);
+    $(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).waitForDisplayed(5000);
 
     expect($(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).isDisplayed()).to.equal(true, true);
     $(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).setValue(faker.random.word());

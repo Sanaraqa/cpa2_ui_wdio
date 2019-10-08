@@ -6,7 +6,8 @@ module.exports = {
     buttonStreams: 'div.d-flex.flex-column.h-100 li a[href="/streams"]',
     buttonTools: "li.nav-item p.nav-link.has-child.tool",
     buttonToolsParkingDomain: 'div.d-flex.flex-column.h-100 li a[href="/tools/parking"]',
-    buttonSupport: 'div.d-flex.flex-column.h-100 li a[href="/support-main"]'
+    buttonSupport: 'div.d-flex.flex-column.h-100 li a[href="/support-main"]',
+    buttonToolsGlobalPostback: 'div.d-flex.flex-column.h-100 li a[href="/tools/postback"]'
 
   }
 };

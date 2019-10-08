@@ -1,6 +1,7 @@
+const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
+const { expect } = require("mocha");
 
 module.exports = {
-
   //locators on form login in system
   variableLocatorsLogin: {
     elementEmailInput: "input#loginEmail",
@@ -9,12 +10,12 @@ module.exports = {
   },
 
   //function hoes сorrect login in system
-  loginCorrect() {
-    console.log('START TEST - ///create support task///');
-    //browser.url("/login");
+  loginCorrect(dashBoardPage) {
+    console.log('START TEST - //////');
+    browser.url("/main/index.html");
     $(this.variableLocatorsLogin.elementEmailInput).setValue("roman.qa+test10@dott.pro");
     $(this.variableLocatorsLogin.elementEmailPassword).setValue("Qwer!@#");
     $(this.variableLocatorsLogin.pressEnter).click();
-  }
 
+  }
 };

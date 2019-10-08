@@ -6,22 +6,20 @@ const streamPage = require("../pageObjectFiles/streamPage.js");
 const toolsPage = require("../pageObjectFiles/toolsPage.js");
 
 before(function () {
-  console.log('START');
   loginPage.loginCorrect();
-
 });
 
 
 describe("create domain", function () {
-      it("should be test on create domain", function() {
-      $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(15000);
-      expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
 
-      $(dashBoardPage.variableLocatorsDashBoard.buttonTools).waitForDisplayed(10000);
-      expect($(dashBoardPage.variableLocatorsDashBoard.buttonTools).isDisplayed()).to.equal(true, true);
-      $(dashBoardPage.variableLocatorsDashBoard.buttonTools).click();
-      expect($(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).isDisplayed()).to.equal(true, true);
-      $(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).click();
+      it("should be test on create domain", function() {
+        $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
+        expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+        $(dashBoardPage.variableLocatorsDashBoard.buttonTools).waitForDisplayed(10000);
+        expect($(dashBoardPage.variableLocatorsDashBoard.buttonTools).isDisplayed()).to.equal(true, true);
+        $(dashBoardPage.variableLocatorsDashBoard.buttonTools).click();
+        expect($(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).isDisplayed()).to.equal(true, true);
+        $(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).click();
 
 
       $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).waitForDisplayed(10000);
@@ -35,7 +33,7 @@ describe("create domain", function () {
 
       console.log(formatsetinEveible);
       
-      if (formatsetinEveible[1] === "the same text") {
+      if (formatsetinEveible[1] === "Формицитин - средство для потенции") {
 
         $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).waitForDisplayed(10000);
         expect( $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).isDisplayed()).to.equal(true, true);
@@ -78,7 +76,6 @@ describe("create domain", function () {
         expect( $(streamPage.variableLocatorsStreamMenu.createWindow).isDisplayed()).to.equal(true, true);
 
         $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).waitForDisplayed(10000);
-
         $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).click();
       }
     });

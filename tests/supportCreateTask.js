@@ -10,10 +10,10 @@ before(function () {
 });
 
 describe("create support task", function () {
-    it('should create new support task', function () {
 
-      $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(10000);
-      expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true, "not visible leftMenuAllElements");
+    it('should create new support task', function () {
+      $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
+      expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).waitForDisplayed(10000);
       expect($(dashBoardPage.variableLocatorsDashBoard.buttonSupport).isDisplayed()).to.equal(true, true);
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).click();
