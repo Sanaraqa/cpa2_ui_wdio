@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const faker = require("faker");
 //const {describe, it} = require("mocha");
-const loginPage = require("../pageObjectFiles/loginPO.js");
+const loginPage = require("../pageObjectFiles/loginPage.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const streamPage = require("../pageObjectFiles/streamPage.js");
 const toolsPage = require("../pageObjectFiles/toolsPage.js");
@@ -17,8 +17,7 @@ before(function () {
 describe("create main functionality", function () {
 
   it("should be create stream", function()  {
-    $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
-    expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+  
     $(streamPage.variableLocatorsStreamMenu.buttonStreams).click();
     $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(5000);
 

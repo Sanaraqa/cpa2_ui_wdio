@@ -1,5 +1,5 @@
-const { expect, assert } = require("chai");
-const loginPage = require("../pageObjectFiles/loginPO.js");
+const { assert } = require("chai");
+const loginPage = require("../pageObjectFiles/loginPage.js");
 const mocha = require("@wdio/mocha-framework");
 
 
@@ -12,6 +12,6 @@ describe('not correct email', function () {
         $(loginPage.variableLocatorsLogin.pressEnter).click();
         let alertTextUnCorrectEmail = browser.getAlertText();
         console.log(alertTextUnCorrectEmail);
-        assert.equal(alertTextUnCorrectEmail, 'Такой имейл не зарегистрирован!');
+        assert.equal(alertTextUnCorrectEmail, 'Произошла ошибка! Обратитесь в поддержку...');
     })
 });

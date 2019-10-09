@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const faker = require("faker");
-const loginPage = require("../pageObjectFiles/loginPO.js");
+const loginPage = require("../pageObjectFiles/loginPage.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const supportPage = require("../pageObjectFiles/supportPage.js");
 const mocha = require("@wdio/mocha-framework");
@@ -12,8 +12,7 @@ before(function () {
 describe("create support task", function () {
 
     it('should create new support task', function () {
-      $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
-      expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+      
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).waitForDisplayed(10000);
       expect($(dashBoardPage.variableLocatorsDashBoard.buttonSupport).isDisplayed()).to.equal(true, true);
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).click();

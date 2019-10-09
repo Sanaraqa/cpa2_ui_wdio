@@ -1,6 +1,6 @@
-const { equal, assert } = require("chai");
+const { equal, assert, expect } = require("chai");
 const faker = require("faker");
-const loginPage = require("../pageObjectFiles/loginPO.js");
+const loginPage = require("../pageObjectFiles/loginPage.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const supportPage = require("../pageObjectFiles/supportPage.js");
 const mocha = require("@wdio/mocha-framework");
@@ -11,8 +11,8 @@ before(function () {
 
 describe('empty message', function () {
     it('should be empty message', function () {
-        $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
-        expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
+
+        //wait menu support, see him and click on button support
         $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).waitForDisplayed(10000);
         expect($(dashBoardPage.variableLocatorsDashBoard.buttonSupport).isDisplayed()).to.equal(true, true);
         $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).click();
@@ -20,10 +20,16 @@ describe('empty message', function () {
         //search input "Ticket topic" and fill this field "You massage"
         $(supportPage.variableLocatorsSupport.message).waitForDisplayed(5000);
         expect($(supportPage.variableLocatorsSupport.message).isDisplayed()).to.equal(true, true);
+
+        //enter random words and click create ticket
         $(supportPage.variableLocatorsSupport.message).setValue(faker.random.words());
         $(supportPage.variableLocatorsSupport.buttonCreateTicket).click();
+    
+        //catch Alert(); get text
         let errorNoMessage =  browser.getAlertText();
         console.log(errorNoMessage);
+
+        //to equal words in Alert();
         assert.equal(errorNoMessage, "Заполните все поля!")
 
     })
