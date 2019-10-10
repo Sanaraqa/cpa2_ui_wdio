@@ -13,8 +13,8 @@ module.exports = {
   loginCorrect() {
     console.log('//////////////////////////START TEST - //////////////////////////');
     browser.url("/main/index.html");
-    $(this.variableLocatorsLogin.elementEmailInput).setValue("roman.qa+test10@dott.pro");
-    $(this.variableLocatorsLogin.elementEmailPassword).setValue("Qwer!@#");
+    $(this.variableLocatorsLogin.elementEmailInput).setValue("");
+    $(this.variableLocatorsLogin.elementEmailPassword).setValue("");
     $(this.variableLocatorsLogin.pressEnter).click();
     $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
     expect($(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).isDisplayed()).to.equal(true, true);
