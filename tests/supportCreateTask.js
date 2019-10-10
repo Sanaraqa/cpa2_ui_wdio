@@ -13,6 +13,7 @@ describe("create support task", function () {
 
     it('should create new support task', function () {
       
+      //wait button hoes go to support page
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).waitForDisplayed(10000);
       expect($(dashBoardPage.variableLocatorsDashBoard.buttonSupport).isDisplayed()).to.equal(true, true);
       $(dashBoardPage.variableLocatorsDashBoard.buttonSupport).click();
@@ -27,8 +28,8 @@ describe("create support task", function () {
       expect($(supportPage.variableLocatorsSupport.message).isDisplayed()).to.equal(true, true);
       $(supportPage.variableLocatorsSupport.message).setValue(faker.random.words());
 
+      //click on button create ticket
       $(supportPage.variableLocatorsSupport.buttonCreateTicket).click();
-      //browser.reloadSession()
     });
 });
 

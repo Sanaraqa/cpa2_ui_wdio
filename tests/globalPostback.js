@@ -1,7 +1,6 @@
 const { expect } = require("chai");
 const faker = require("faker");
-//const {describe, it} = require("mocha");
-const loginPage = require("../../pageObjectFiles/loginPage.js");
+const loginPage = require("../pageObjectFiles/loginPage.js");
 const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const toolsPage = require("../pageObjectFiles/toolsPage.js");
 

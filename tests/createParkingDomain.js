@@ -22,14 +22,14 @@ describe("create domain", function () {
           $(dashBoardPage.variableLocatorsDashBoard.buttonToolsParkingDomain).click();
 
 
-          //wait input, bropDown, and value to create parcking domain
+          //wait input, bropDown and value to create parcking domain
           $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).waitForDisplayed(10000);
           expect( $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).isDisplayed()).to.equal(true, true);
           $(toolsPage.variableLocatorsToolsDomainParking.inputFormatsitin).click();
           browser.pause(1000);
-
           $(toolsPage.variableLocatorsToolsDomainParking.dropdownOffersLocator).waitForDisplayed(5000);
           expect($(toolsPage.variableLocatorsToolsDomainParking.dropdownOffersLocator).isDisplayed()).to.equal(true, true);
+          //take all text from input and make form his array
           let formatsetinEveible = $(toolsPage.variableLocatorsToolsDomainParking.dropdownOffersLocator).getText().split('\n');
 
           console.log(formatsetinEveible);

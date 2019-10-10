@@ -18,14 +18,17 @@ describe("create main functionality", function () {
 
   it("should be create stream", function()  {
   
+    //wait for button stream and go to create stream page
+    $(streamPage.variableLocatorsStreamMenu.buttonStreams).waitForDisplayed(5000);
     $(streamPage.variableLocatorsStreamMenu.buttonStreams).click();
-    $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(5000);
 
+    //wait for button "create stream" on stream page
+    $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).waitForDisplayed(5000);
     expect($(streamPage.variableLocatorsStreamMenu.buttonCreateStream).isDisplayed()).to.equal(true, true);
     $(streamPage.variableLocatorsStreamMenu.buttonCreateStream).click();
 
+    // wait input then write in input random value with help Faker
     $(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).waitForDisplayed(5000);
-
     expect($(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).isDisplayed()).to.equal(true, true);
     $(streamPage.variableLocatorsStreamMenu.inputCreateStreamName).setValue(faker.random.word());
 
