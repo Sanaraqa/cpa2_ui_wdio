@@ -13,7 +13,7 @@ module.exports = {
   loginCorrect() {
     console.log('START TEST');
     browser.url("/main/index.html");
-    $(this.variableLocatorsLogin.elementEmailInput).setValue("roman.qa+test10@dott.pro");
+    $(this.variableLocatorsLogin.elementEmailInput).setValue("exemple@gmail.com");
     $(this.variableLocatorsLogin.elementEmailPassword).setValue("Qwer!@#");
     $(this.variableLocatorsLogin.pressEnter).click();
     $(dashBoardPage.variableLocatorsDashBoard.leftMenuAllElements).waitForDisplayed(5000);
