@@ -11,11 +11,9 @@ before(function () {
 
 describe('Глобальный Postback', function () {
     it('should create global postback without entered URL', function () {
-      
         $(dashBoardPage.variableLocatorsDashBoard.buttonTools).waitForDisplayed(5000);
         expect($(dashBoardPage.variableLocatorsDashBoard.buttonTools).isDisplayed()).to.equal(true, true);
         $(dashBoardPage.variableLocatorsDashBoard.buttonTools).click();
         $(dashBoardPage.variableLocatorsDashBoard.buttonToolsGlobalPostback).click();
-
     });
 });

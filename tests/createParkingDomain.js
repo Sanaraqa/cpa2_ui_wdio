@@ -31,7 +31,6 @@ describe("create domain", function () {
           expect($(toolsPage.variableLocatorsToolsDomainParking.dropdownOffersLocator).isDisplayed()).to.equal(true, true);
           //take all text from input and make form his array
           let formatsetinEveible = $(toolsPage.variableLocatorsToolsDomainParking.dropdownOffersLocator).getText().split('\n');
-
           console.log(formatsetinEveible);
         
         if (formatsetinEveible[1] === "Формицитин - средство для потенции") {
@@ -50,11 +49,9 @@ describe("create domain", function () {
           $(toolsPage.variableLocatorsToolsDomainParking.buttonAddDomain).click();
 
           $(streamPage.variableLocatorsStreamMenu.createWindow).waitForDisplayed(10000);
-
           expect( $(streamPage.variableLocatorsStreamMenu.createWindow).isDisplayed()).to.equal(true, true);
 
           $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).waitForDisplayed(10000);
-
           $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).click();
         }
         else {
@@ -64,7 +61,6 @@ describe("create domain", function () {
           $(toolsPage.variableLocatorsToolsDomainParking.formatsitin).click();
 
           $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).waitForDisplayed(10000);
-
           $(toolsPage.variableLocatorsToolsDomainParking.inputAddress).setValue(faker.internet.domainName());
 
           browser.pause(1000);
@@ -73,7 +69,6 @@ describe("create domain", function () {
           $(toolsPage.variableLocatorsToolsDomainParking.buttonAddDomain).click();
 
           $(streamPage.variableLocatorsStreamMenu.createWindow).waitForDisplayed(10000);
-
           expect( $(streamPage.variableLocatorsStreamMenu.createWindow).isDisplayed()).to.equal(true, true);
 
           $(streamPage.variableLocatorsStreamMenu.buttonOkCreateStream).waitForDisplayed(10000);

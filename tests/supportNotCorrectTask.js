@@ -5,6 +5,7 @@ const dashBoardPage = require("../pageObjectFiles/dashboardPage.js");
 const supportPage = require("../pageObjectFiles/supportPage.js");
 const mocha = require("@wdio/mocha-framework");
 
+
 before(function () {
     loginPage.loginCorrect();
 });
