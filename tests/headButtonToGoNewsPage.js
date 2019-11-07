@@ -29,7 +29,7 @@ describe('checked button on head element, hoes go to on news page', function(){
               expect($(newsPage.variableNewsPageElement.centralMainElement).isDisplayed()).to.equal(true, true);
               expect($(newsPage.variableNewsPageElement.rightElement).isDisplayed()).to.equal(true, true);
 
-              //checked tru url
+              //checked true url
               expect(browser.getUrl()).not.to.contains("/dashboard");
               expect(browser.getUrl()).to.contains("/news");
 
