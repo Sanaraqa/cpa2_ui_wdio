@@ -1,7 +1,7 @@
 
 #UI tests on CPA v.2 
 
-site: <https://nutramedia>
+site:
 
 ***************************************
 
